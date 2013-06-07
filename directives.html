@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <script src="angular.min.js"></script>
+</head>
+<body ng-init="pages=[1,2,3,4,5]; rows=['hai','hello']">
+Name: <input type="text" ng-model="nameText" /> {{ nameText }}
+<select ng-model="orderby">
+<option value="name">name</option>
+<option value="phone" selected>phone</option>
+</select>
+<ul ng-init="people=[{name: 'Ganesh', phone: 3 }, {name: 'Suresh', phone: 1},{name: 'Ramesh', phone: 2}]">
+  <li ng-repeat="person in people | filter: nameText | orderBy: 'phone'">{{ person.name | uppercase }} - {{ person.phone }}</li>
+</ul>
+
+<p ng-repeat="page in pages"> {{ page }}</p>
+<p ng-repeat="row in rows"> {{ row }}</p>
+
+</body>
+</html>
